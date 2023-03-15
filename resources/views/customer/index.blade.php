@@ -1,3 +1,6 @@
+@if(Session::has('success'))
+    {{Session::get('success')}}
+@endif
 @include('partials.header')
 <x-nav />
 <table class="table table-hover">
@@ -23,7 +26,7 @@
       <td>{{$customer->email}}</td>
       <td>{{$customer->address}}</td>
       <td><a href="#">Edit</a></td>
-      <td><a href="#">Delete</a></td>
+      <td><a href="delete/{{$customer->id}}">Delete</a></td>
     </tr>
   </tbody>
   @endforeach
